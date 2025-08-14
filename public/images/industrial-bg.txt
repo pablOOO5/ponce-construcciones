@@ -1,0 +1,3 @@
+# Placeholder para industrial-bg.jpg
+# Esta imagen se usa como fondo en el componente Hero
+# Puedes reemplazarla con una imagen industrial real
