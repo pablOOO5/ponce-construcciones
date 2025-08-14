@@ -1,0 +1,270 @@
+---
+// Componente ClientsSection - Empresas cliente
+const companies = [
+  { id: 1, name: "Empresa 1" },
+  { id: 2, name: "Empresa 2" },
+  { id: 3, name: "Empresa 3" },
+  { id: 4, name: "Empresa 4" },
+  { id: 5, name: "Empresa 5" },
+  { id: 6, name: "Empresa 6" },
+  { id: 7, name: "Empresa 7" },
+  { id: 8, name: "Empresa 8" },
+  { id: 9, name: "Empresa 9" }
+];
+---
+
+<section id="clientes" class="clients-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Empresas que Confían en Nosotros</h2>
+      <p class="section-subtitle">
+        Hemos trabajado con empresas líderes en la industria, 
+        brindando servicios de construcción especializada de primera calidad.
+      </p>
+    </div>
+
+    <div class="clients-grid">
+      {companies.map((company) => (
+        <div class="client-logo">
+          <img 
+            src={`/ponce-construcciones/images/empesas/${company.id}.jpeg`}
+            alt={`Logo ${company.name}`}
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="clients-footer">
+      <p class="trust-text">
+        <span class="highlight">+15 años</span> trabajando con empresas de renombre nacional
+      </p>
+      <div class="trust-badges">
+        <div class="badge">
+          <span class="badge-icon">🏆</span>
+          <span>Calidad Certificada</span>
+        </div>
+        <div class="badge">
+          <span class="badge-icon">🤝</span>
+          <span>Confianza Empresarial</span>
+        </div>
+        <div class="badge">
+          <span class="badge-icon">⚡</span>
+          <span>Resultados Garantizados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clients-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+  }
+
+  .clients-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+    color: #0f1419;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: center;
+  }
+
+  .client-logo {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+  }
+
+  .client-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.2);
+    border-color: rgba(255, 107, 53, 0.3);
+  }
+
+  .client-logo img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(60%) opacity(0.8);
+    transition: all 0.3s ease;
+  }
+
+  .client-logo:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+  }
+
+  .clients-footer {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 107, 53, 0.2);
+  }
+
+  .trust-text {
+    font-size: 1.3rem;
+    color: #495057;
+    margin-bottom: 2rem;
+  }
+
+  .highlight {
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 107, 53, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .badge:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .badge-icon {
+    font-size: 1.2rem;
+  }
+
+  .badge span:last-child {
+    color: #0f1419;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Animación de aparición progresiva */
+  .client-logo {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .client-logo:nth-child(1) { animation-delay: 0.1s; }
+  .client-logo:nth-child(2) { animation-delay: 0.2s; }
+  .client-logo:nth-child(3) { animation-delay: 0.3s; }
+  .client-logo:nth-child(4) { animation-delay: 0.4s; }
+  .client-logo:nth-child(5) { animation-delay: 0.5s; }
+  .client-logo:nth-child(6) { animation-delay: 0.6s; }
+  .client-logo:nth-child(7) { animation-delay: 0.7s; }
+  .client-logo:nth-child(8) { animation-delay: 0.8s; }
+  .client-logo:nth-child(9) { animation-delay: 0.9s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .clients-section {
+      padding: 3rem 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+
+    .clients-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .client-logo {
+      height: 100px;
+      padding: 1rem;
+    }
+
+    .client-logo img {
+      max-height: 60px;
+    }
+
+    .trust-badges {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .badge {
+      width: 100%;
+      max-width: 250px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .clients-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
