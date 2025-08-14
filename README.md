@@ -1,10 +1,69 @@
-# Astro Starter Kit: Basics
+# Ponce Pablo - Construcción Industrial
 
-```sh
-npm create astro@latest -- --template basics
+Sitio web oficial de Ponce Pablo, empresa especializada en servicios de construcción industrial con más de 15 años de experiencia.
+
+## 🏗️ Servicios
+
+- **Reparación de Calderas** - Mantenimiento especializado en calderas industriales
+- **Instalaciones Contra Incendios** - Sistemas de seguridad contra incendios
+- **Mantenimiento Industrial** - Restauración y mantenimiento de plantas
+- **Instalación de Cañerías** - Montaje y soldado de sistemas de tuberías
+- **Soldaduras Especiales** - Trabajos en acero inoxidable y materiales especiales
+- **Sistemas Automatizados** - Instalación de sistemas de aire automatizado
+
+## 📍 Cobertura
+
+Brindamos servicios en:
+- Santa Fe (base principal)
+- Buenos Aires
+- Entre Ríos
+- Mendoza
+
+## 🛠️ Tecnologías
+
+Este sitio web está desarrollado con:
+- [Astro](https://astro.build/) - Framework moderno para sitios web
+- HTML5 y CSS3
+- JavaScript vanilla
+- Diseño responsive
+- Optimizado para GitHub Pages
+
+## 🚀 Desarrollo
+
+### Instalación
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Desarrollo local
+
+```bash
+npm run dev
+```
+
+### Build para producción
+
+```bash
+npm run build
+```
+
+### Deploy a GitHub Pages
+
+```bash
+npm run deploy
+```
+
+## 📱 Contacto
+
+- **Dirección:** Caferata 1437, Recreo, Santa Fe, 3018
+- **Teléfonos:** 342 5573707 | 342 5546807
+- **Email:** ponceysimioni@hotmail.com
+- **Instagram:** [@poncepablo.sf](https://instagram.com/poncepablo.sf)
+
+## 📄 Licencia
+
+© 2024 Ponce Pablo. Todos los derechos reservados.
 
 ## 🚀 Project Structure
 

@@ -1,0 +1,238 @@
+---
+// Componente About
+---
+
+<section id="nosotros" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Sobre Nosotros</h2>
+        <p class="lead">
+          Con más de 15 años en el rubro, Ponce Pablo se ha convertido en una herramienta fundamental 
+          para llevar a cabo proyectos de gran envergadura en el mundo de la construcción.
+        </p>
+        <p>
+          La subcontratación cuenta con la capacidad de llevar adelante un modo eficiente de trabajo, 
+          dando garantía de nuestros servicios y sosteniendo precios competitivos en el mercado. 
+          Además contamos con personal capacitado para su dirección y ejecución en obras.
+        </p>
+        
+        <h3>Nuestro Trabajo</h3>
+        <p>
+          El trabajo de Ponce Pablo es una muestra de calidad, eficiencia y profesionalismo en el rubro 
+          de la construcción. Con años de experiencia en el mercado, esta subcontratista se ha posicionado 
+          como una de las mejores opciones para empresas constructoras que buscan servicios especializados 
+          y de alto nivel.
+        </p>
+        
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🏗️</div>
+            <h4>Experiencia</h4>
+            <p>Más de 15 años en construcción industrial</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">⚙️</div>
+            <h4>Especialización</h4>
+            <p>Servicios industriales especializados</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔧</div>
+            <h4>Calidad</h4>
+            <p>Personal capacitado y equipos modernos</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📍</div>
+            <h4>Cobertura</h4>
+            <p>Santa Fe, Buenos Aires, Entre Ríos</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <img src="/images/about-placeholder.jpg" alt="Equipo de trabajo Ponce Pablo" />
+        <div class="image-overlay">
+          <div class="overlay-content">
+            <h4>Garantía de Calidad</h4>
+            <p>Profesionalismo en cada proyecto</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+    position: relative;
+  }
+
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/construction-pattern.png') repeat;
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-text h2 {
+    font-size: 3rem;
+    color: #ff6b35;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .about-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+  }
+
+  .about-text h3 {
+    font-size: 2rem;
+    color: #ffa726;
+    margin: 2rem 0 1rem 0;
+  }
+
+  .lead {
+    font-size: 1.3rem;
+    color: #ffa726;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature h4 {
+    color: #ff6b35;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .about-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .about-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .about-image:hover .image-overlay {
+    transform: translateY(0);
+  }
+
+  .overlay-content h4 {
+    color: #ff6b35;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .overlay-content p {
+    margin: 0;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+      height: 300px;
+    }
+  }
+</style>

@@ -1,0 +1,401 @@
+---
+// Componente Contact
+---
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Información de Contacto</h2>
+      <p>Estamos listos para ayudarte con tu próximo proyecto de construcción industrial</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3>Dirección</h3>
+          <p>Caferata 1437, Recreo<br>Santa Fe, 3018</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h3>Teléfonos</h3>
+          <p>
+            <a href="tel:+543425573707">342 5573707</a><br>
+            <a href="tel:+543425546807">342 5546807</a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:ponceysimioni@hotmail.com">ponceysimioni@hotmail.com</a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📱</div>
+          <h3>Instagram</h3>
+          <p>
+            <a href="https://instagram.com/poncepablo.sf" target="_blank" rel="noopener">@poncepablo.sf</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Envíanos un mensaje</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="service">Servicio de interés</label>
+            <select id="service" name="service">
+              <option value="">Selecciona un servicio</option>
+              <option value="caldera">Reparación de Calderas</option>
+              <option value="incendios">Instalaciones Contra Incendios</option>
+              <option value="mantenimiento">Mantenimiento Industrial</option>
+              <option value="canerias">Instalación de Cañerías</option>
+              <option value="soldaduras">Soldaduras Especiales</option>
+              <option value="automatizados">Sistemas Automatizados</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe tu proyecto o consulta..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="coverage-area">
+      <h3>Área de Cobertura</h3>
+      <p>Brindamos servicios en las siguientes provincias:</p>
+      <div class="provinces">
+        <div class="province">
+          <span class="province-icon">🏢</span>
+          <h4>Santa Fe</h4>
+          <p>Base principal de operaciones</p>
+        </div>
+        <div class="province">
+          <span class="province-icon">🏭</span>
+          <h4>Buenos Aires</h4>
+          <p>Proyectos industriales</p>
+        </div>
+        <div class="province">
+          <span class="province-icon">⚙️</span>
+          <h4>Entre Ríos</h4>
+          <p>Servicios especializados</p>
+        </div>
+        <div class="province">
+          <span class="province-icon">🔧</span>
+          <h4>Mendoza</h4>
+          <p>Reparación de calderas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+    color: #ff6b35;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+  }
+
+  .section-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-info {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-card h3 {
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .contact-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-card a {
+    color: #ffa726;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-card a:hover {
+    color: #ff6b35;
+  }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .contact-form h3 {
+    color: #ff6b35;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    color: #ffa726;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  }
+
+  .coverage-area {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+
+  .coverage-area h3 {
+    color: #ff6b35;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .coverage-area > p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .provinces {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .province {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .province:hover {
+    transform: translateY(-5px);
+  }
+
+  .province-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .province h4 {
+    color: #ffa726;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .province p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .contact-form {
+      padding: 1.5rem;
+    }
+    
+    .coverage-area {
+      padding: 2rem;
+    }
+    
+    .provinces {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    
+    form?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Obtener datos del formulario
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Crear mensaje para WhatsApp
+      const message = `Hola! Me gustaría consultar sobre sus servicios:
+
+Nombre: ${data.name}
+Email: ${data.email}
+Teléfono: ${data.phone || 'No especificado'}
+Servicio: ${data.service || 'No especificado'}
+
+Mensaje: ${data.message}`;
+      
+      // Abrir WhatsApp
+      const whatsappUrl = `https://wa.me/543425573707?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      
+      // Mostrar mensaje de confirmación
+      alert('Redirigiendo a WhatsApp para enviar tu consulta...');
+      
+      // Limpiar formulario
+      form.reset();
+    });
+  });
+</script>

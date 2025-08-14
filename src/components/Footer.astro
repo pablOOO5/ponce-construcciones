@@ -1,0 +1,213 @@
+---
+// Componente Footer
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Ponce Pablo</h3>
+        <p>Servicios de construcción industrial especializada con más de 15 años de experiencia en el mercado.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/poncepablo.sf" target="_blank" rel="noopener" aria-label="Instagram">
+            <span>📱</span>
+          </a>
+          <a href="mailto:ponceysimioni@hotmail.com" aria-label="Email">
+            <span>✉️</span>
+          </a>
+          <a href="tel:+543425573707" aria-label="Teléfono">
+            <span>📞</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Reparación de Calderas</a></li>
+          <li><a href="#servicios">Instalaciones Contra Incendios</a></li>
+          <li><a href="#servicios">Mantenimiento Industrial</a></li>
+          <li><a href="#servicios">Instalación de Cañerías</a></li>
+          <li><a href="#servicios">Soldaduras Especiales</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <div class="contact-info">
+          <p>📍 Caferata 1437, Recreo, Santa Fe</p>
+          <p>📞 342 5573707 | 342 5546807</p>
+          <p>✉️ ponceysimioni@hotmail.com</p>
+          <p>📱 @poncepablo.sf</p>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Área de Cobertura</h4>
+        <ul>
+          <li>Santa Fe</li>
+          <li>Buenos Aires</li>
+          <li>Entre Ríos</li>
+          <li>Mendoza</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-content">
+        <p>&copy; 2024 Ponce Pablo. Todos los derechos reservados.</p>
+        <p>Sitio web desarrollado con <span class="heart">❤️</span> usando Astro</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    position: relative;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    color: #ff6b35;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .footer-section h4 {
+    color: #ffa726;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: #ff6b35;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background: #ff6b35;
+    transform: translateY(-2px);
+  }
+
+  .social-links a span {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    margin: 2rem 0 1rem;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom-content p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .heart {
+    color: #ff6b35;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.1); }
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+  }
+</style>
