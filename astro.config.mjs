@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://TUUSUARIO.github.io',
+  site: 'https://pablOOO5.github.io',
   base: '/ponce-construcciones',
   output: 'static',
   build: {
