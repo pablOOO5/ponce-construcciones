@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  variant?: 'horizontal' | 'primary' | 'stacked' | 'isotipo';
+  variant?: 'horizontal' | 'primary' | 'stacked' | 'isotipo' | 'white' | 'black';
   height?: number;
   ariaLabel?: string;
 }
@@ -15,7 +15,9 @@ const map: Record<string,string> = {
   horizontal: `${basePath}images/logo/logo-horizontal.svg`,
   primary: `${basePath}images/logo/logo-primary.svg`,
   stacked: `${basePath}images/logo/logo-stacked.svg`,
-  isotipo: `${basePath}images/logo/isotipo.svg`
+  isotipo: `${basePath}images/logo/isotipo.svg`,
+  white: `${basePath}images/logo/logo ponce pablo white.png`,
+  black: `${basePath}images/logo/logo ponce pablo black.png`
 };
 
 const src = map[variant] || map.horizontal;

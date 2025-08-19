@@ -6,7 +6,7 @@ import Logo from './Logo.astro';
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">
-      <Logo variant="horizontal" height="40" />
+      <Logo variant="white" height="40" />
     </div>
     <ul class="nav-menu">
       <li class="nav-item">
@@ -67,6 +67,7 @@ import Logo from './Logo.astro';
     max-height: 40px;
     width: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    object-fit: contain;
   }
 
   .nav-menu {
