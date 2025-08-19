@@ -109,6 +109,16 @@
           <h4>Mendoza</h4>
           <p>Reparación de calderas</p>
         </div>
+        <div class="province">
+          <span class="province-icon">🏗️</span>
+          <h4>Córdoba</h4>
+          <p>Proyectos industriales</p>
+        </div>
+        <div class="province">
+          <span class="province-icon">⚡</span>
+          <h4>Chaco</h4>
+          <p>Instalaciones especializadas</p>
+        </div>
       </div>
     </div>
   </div>
@@ -309,7 +319,7 @@
 
   .provinces {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
 
@@ -342,6 +352,12 @@
     font-size: 0.9rem;
   }
 
+  @media (max-width: 1024px) {
+    .provinces {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
     .contact-content {
       grid-template-columns: 1fr;
@@ -361,7 +377,7 @@
     }
     
     .provinces {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 </style>

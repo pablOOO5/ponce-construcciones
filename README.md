@@ -24,8 +24,10 @@ Sitio web oficial de Ponce Pablo, empresa especializada en servicios de construc
 Brindamos servicios en:
 - Santa Fe (base principal)
 - Buenos Aires
+- Córdoba
 - Entre Ríos
 - Mendoza
+- Chaco
 
 ## 🛠️ Tecnologías
 
