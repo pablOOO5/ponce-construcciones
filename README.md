@@ -2,6 +2,14 @@
 
 Sitio web oficial de Ponce Pablo, empresa especializada en servicios de construcción industrial con más de 15 años de experiencia.
 
+## ✨ Características Destacadas
+
+- **🖼️ Galería Interactiva** - Navegación por flechas en galería de proyectos
+- **📱 WhatsApp Direct** - Enlaces directos para consultas inmediatas
+- **🎨 Logo Profesional** - Identidad visual moderna con variantes SVG
+- **📱 Diseño Responsive** - Optimizado para todos los dispositivos
+- **⚡ Alto Rendimiento** - Construido con Astro para máxima velocidad
+
 ## 🏗️ Servicios
 
 - **Reparación de Calderas** - Mantenimiento especializado en calderas industriales
@@ -57,6 +65,7 @@ npm run deploy
 ## 📱 Contacto
 
 - **Dirección:** Caferata 1437, Recreo, Santa Fe, 3018
+- **WhatsApp:** [+54 9 3425 54-6807](https://wa.me/5493425546807) (Click para contacto directo)
 - **Teléfonos:** 342 5573707 | 342 5546807
 - **Email:** ponceysimioni@hotmail.com
 - **Instagram:** [@poncepablo.sf](https://instagram.com/poncepablo.sf)
@@ -86,6 +95,35 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 
 To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## 🎨 Logo & Brand Assets
+
+El sitio incluye un sistema de logos profesionales:
+
+- **Logo Horizontal** (`/public/images/logo/logo-horizontal.svg`) - 480×120px, ideal para header y documentos
+- **Isotipo** (`/public/images/logo/isotipo.svg`) - 200×200px, versión compacta para redes sociales
+- **Favicon** (`/public/favicon.svg`) - 32×32px, ultra-simplificado para navegadores
+
+### Uso del componente Logo
+
+```astro
+---
+import Logo from './Logo.astro';
+---
+
+<!-- Logo horizontal -->
+<Logo variant="horizontal" height="40" />
+
+<!-- Isotipo compacto -->
+<Logo variant="isotipo" height="60" />
+```
+
+## 📸 Galería de Imágenes
+
+- **Navegación por Flechas** - Sistema intuitivo sin thumbnails
+- **Contador de Imágenes** - Indicador de posición actual
+- **Navegación por Teclado** - Flechas izquierda/derecha y Escape
+- **Responsive** - Adaptado para móviles y desktop
 
 ## 🧞 Commands
 

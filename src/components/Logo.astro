@@ -1,0 +1,31 @@
+---
+export interface Props {
+  variant?: 'horizontal' | 'primary' | 'stacked' | 'isotipo';
+  height?: number;
+  ariaLabel?: string;
+}
+
+const { variant = 'horizontal', height = 60, ariaLabel = 'Ponce Pablo' } = Astro.props;
+
+// Usar base path dinámico para compatibilidad con GitHub Pages
+const rawBase = import.meta.env.BASE_URL || '/';
+const basePath = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+
+const map: Record<string,string> = {
+  horizontal: `${basePath}images/logo/logo-horizontal.svg`,
+  primary: `${basePath}images/logo/logo-primary.svg`,
+  stacked: `${basePath}images/logo/logo-stacked.svg`,
+  isotipo: `${basePath}images/logo/isotipo.svg`
+};
+
+const src = map[variant] || map.horizontal;
+---
+
+<img 
+  src={src} 
+  alt={ariaLabel} 
+  height={height} 
+  loading="lazy" 
+  decoding="async" 
+  style={`height: ${height}px; width: auto; display: block;`}
+/>

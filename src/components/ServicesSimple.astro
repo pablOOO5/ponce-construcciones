@@ -1,0 +1,587 @@
+---
+// Componente Services con galería de imágenes y navegación por flechas
+// Usamos basePath para compatibilidad con GitHub Pages y entorno local (normalizado con / final)
+const rawBase = import.meta.env.BASE_URL || '/';
+const basePath = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const services = [
+  {
+    title: "Soldaduras Especiales",
+    description: "Servicios especializados en soldaduras para aplicaciones industriales críticas con certificaciones API y ASME IX.",
+    items: [
+      "Soldaduras en tendidos de gasoductos - API",
+      "Soldaduras en plantas de regulación y medición - ASME IX"
+    ],
+    icon: "⚡",
+    imageFolder: "soldaduras-especiales",
+    imageCount: 5
+  },
+  {
+    title: "Obras Civiles",
+    description: "Construcción integral y modificación de obras existentes con materiales de primera calidad y mano de obra especializada.",
+    items: [
+      "Construcción en general y modificación de las existentes",
+      "Estructuras de hormigón armado, urbanización y edificación",
+      "Carpintería, herrería industrial, vallados, postes de alumbrado y afines",
+      "Instalación eléctrica"
+    ],
+    icon: "🏗️",
+    imageFolder: "obras-civiles",
+    imageCount: 4
+  },
+  {
+    title: "Instalación Sanitaria",
+    description: "Soluciones completas en instalaciones sanitarias y de gas natural con provisión de materiales aprobados y equipos especializados.",
+    items: [
+      "Instalación de gas natural",
+      "Peine regulador para montante de gas natural",
+      "Red de agua fría/caliente",
+      "Desagües cloacales y pluviales",
+      "Zanjeo manual y con maquinaria",
+      "Red contra incendios",
+      "Instalación de sala de bombeo",
+      "Provisión de materiales aprobados",
+      "Provisión y colocación de artefactos y accesorios",
+      "Herramientas y equipos"
+    ],
+    icon: "🚰",
+    imageFolder: "instalacion-sanitarias",
+    imageCount: 5
+  },
+  {
+    title: "Instalaciones Industriales",
+    description: "Mantenimiento y construcción de plantas industriales con tecnología avanzada y sistemas de alta eficiencia.",
+    items: [
+      "Realización de Planta reguladora",
+      "Mantenimiento de plantas industriales",
+      "Reparación y mantenimiento de Calderas",
+      "Cañerías a vapor y conexionado a equipos",
+      "Cañerías de agua helada y conexionado a equipos",
+      "Cañería de acero inoxidable"
+    ],
+    icon: "🏭",
+    imageFolder: "instalaciones-industriales",
+    imageCount: 8
+  },
+  {
+    title: "Ejecución y Tendido de Cableado Subterráneo",
+    description: "Servicios especializados en tendido de cableado subterráneo con equipos de última generación y técnicas avanzadas.",
+    items: [
+      "Zanjeo manual y con maquinarias",
+      "Mano de obra y equipos de tendido de línea",
+      "Tendido de caño camisa para fibra óptica"
+    ],
+    icon: "🔌",
+    imageFolder: null,
+    imageCount: 0
+  }
+];
+---
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-header">
+      <h2>Nuestros Servicios</h2>
+      <p>Servicios especializados en construcción industrial con más de 15 años de experiencia</p>
+    </div>
+    
+    <div class="services-grid">
+      {services.map((service, index) => (
+        <div class="service-card">
+          {service.imageFolder && (
+            <div class="service-image">
+              <img 
+                src={`${basePath}images/${service.imageFolder}/1.jpeg`}
+                alt={`${service.title} - Imagen principal`}
+                loading="lazy"
+              />
+              <div class="image-count">
+                <span>📷 {service.imageCount} fotos</span>
+              </div>
+              {service.imageCount > 1 && (
+                <div class="gallery-overlay">
+                  <button class="gallery-btn" data-service={service.imageFolder} data-count={service.imageCount} data-title={service.title}>
+                    Ver galería
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+          <div class="service-content">
+            <div class="service-icon">
+              <span>{service.icon}</span>
+            </div>
+            <h3>{service.title}</h3>
+            <p class="service-description">{service.description}</p>
+            <ul class="service-items">
+              {service.items.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Modal para galería de imágenes -->
+<div id="imageModal" class="modal" data-base={basePath}>
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+    </div>
+    <div class="image-gallery">
+      <div class="main-image">
+          <button class="nav-arrow prev" id="prevImage" aria-label="Imagen anterior">&#10094;</button>
+          <img id="mainImage" src="" alt="" />
+          <button class="nav-arrow next" id="nextImage" aria-label="Imagen siguiente">&#10095;</button>
+          <div class="image-counter" id="imageCounter"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .services {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+    color: #ff6b35;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+  }
+
+  .section-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    z-index: 2;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+  }
+
+  .service-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-image img {
+    transform: scale(1.1);
+  }
+
+  .image-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-btn {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .gallery-btn:hover {
+    background: #ffa726;
+    transform: scale(1.05);
+  }
+
+  .service-content {
+    padding: 2rem;
+  }
+
+  .service-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon span {
+    font-size: 3rem;
+    padding: 1rem;
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 50%;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 1.2;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .service-content h3 {
+    color: #ff6b35;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .service-description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-items li {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .service-items li::before {
+    content: '•';
+    color: #ffa726;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .service-content {
+      padding: 1.5rem;
+    }
+
+    .service-image {
+      height: 180px;
+    }
+
+    .modal-content {
+      width: 95%;
+      height: 95%;
+      margin: 2.5% auto;
+    }
+
+    .modal-header {
+      padding: 1rem;
+    }
+
+    .modal-header h3 {
+      font-size: 1.2rem;
+    }
+
+    .thumbnail-container {
+      height: 120px;
+      padding: 0.5rem 0;
+    }
+
+    .thumbnails {
+      gap: 0.5rem;
+      padding: 0.3rem;
+    }
+
+    .thumbnails img {
+      height: 80px;
+      width: 80px;
+      border: 2px solid transparent;
+    }
+
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      transform: scale(1.05);
+    }
+
+    .close {
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-content {
+    position: relative;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 1000px;
+    height: 90%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-header {
+    padding: 1.5rem 2rem;
+    background: rgba(255, 107, 53, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .modal-header h3 {
+    color: #ff6b35;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #ff6b35;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+  }
+
+  .close:hover {
+    color: #ffa726;
+  }
+
+  .image-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    min-height: 0; /* evita colapso en flex */
+    padding: 1.5rem; 
+  }
+  
+  .main-image {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    min-height: 0;
+    overflow: hidden;
+    position: relative; 
+  }
+
+  .main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    border-radius: 12px; 
+    box-shadow: 0 8px 30px -5px rgba(0,0,0,0.6); 
+  }
+
+    .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.45); border: 2px solid rgba(255,255,255,0.25); color: #fff; font-size: 2.2rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; backdrop-filter: blur(4px); transition: background .25s, transform .25s, border-color .25s; }
+    .nav-arrow:hover { background: rgba(255,107,53,0.55); border-color: #ff6b35; }
+    .nav-arrow:active { transform: translateY(-50%) scale(.92); }
+    .nav-arrow.prev { left: 10px; }
+    .nav-arrow.next { right: 10px; }
+    .image-counter { position: absolute; bottom: 12px; right: 18px; background: rgba(0,0,0,0.55); padding: .4rem .9rem; border-radius: 20px; font-size: .85rem; letter-spacing: .5px; color: #fff; font-weight: 600; backdrop-filter: blur(4px); }
+
+  /* Miniaturas eliminadas */
+</style>
+
+<script>
+  // Exponemos basePath al runtime
+  window.__BASE_PATH__ = '{basePath}';
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const closeBtn = document.querySelector('.close');
+    const modalTitle = document.getElementById('modalTitle');
+    const mainImage = document.getElementById('mainImage');
+  // Navegación
+  let currentIndex = 1;
+  let totalImages = 0;
+  let currentFolder = '';
+  const prevBtn = document.getElementById('prevImage');
+  const nextBtn = document.getElementById('nextImage');
+  const counter = document.getElementById('imageCounter');
+    const galleryButtons = document.querySelectorAll('.gallery-btn');
+  const runtimeBaseRaw = (modal && modal.dataset.base) || window.__BASE_PATH__ || '/';
+  const runtimeBase = runtimeBaseRaw.endsWith('/') ? runtimeBaseRaw : runtimeBaseRaw + '/';
+
+    // Verificar que todos los elementos existen
+    if (!modal || !closeBtn || !modalTitle || !mainImage || !prevBtn || !nextBtn) {
+      return;
+    }
+
+    // Abrir modal
+    galleryButtons.forEach(function(button) {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const serviceFolder = this.getAttribute('data-service');
+        const imageCount = parseInt(this.getAttribute('data-count'));
+        const serviceName = this.getAttribute('data-title');
+        
+        openGallery(serviceFolder, imageCount, serviceName);
+      });
+    });
+
+    // Cerrar modal
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+
+    // Cerrar modal al hacer click fuera
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    function openGallery(folder, count, title) {
+      modalTitle.textContent = title;
+      currentFolder = folder;
+      totalImages = count;
+      currentIndex = 1;
+      updateImage();
+      modal.style.display = 'block';
+    }
+
+    function updateImage() {
+      if (!currentFolder) return;
+      const url = runtimeBase + 'images/' + currentFolder + '/' + currentIndex + '.jpeg';
+      mainImage.src = url;
+      mainImage.alt = modalTitle.textContent + ' - Imagen ' + currentIndex;
+      if (counter) counter.textContent = currentIndex + ' / ' + totalImages;
+    }
+
+    function nextImageFn() {
+      if (totalImages < 1) return;
+      currentIndex = currentIndex >= totalImages ? 1 : currentIndex + 1;
+      updateImage();
+    }
+    function prevImageFn() {
+      if (totalImages < 1) return;
+      currentIndex = currentIndex <= 1 ? totalImages : currentIndex - 1;
+      updateImage();
+    }
+
+    nextBtn.addEventListener('click', nextImageFn);
+    prevBtn.addEventListener('click', prevImageFn);
+
+    // Navegación con teclado
+    document.addEventListener('keydown', function(e) {
+      if (modal.style.display === 'block') {
+        if (e.key === 'Escape') modal.style.display = 'none';
+        else if (e.key === 'ArrowRight') nextImageFn();
+        else if (e.key === 'ArrowLeft') prevImageFn();
+      }
+    });
+  });
+</script>

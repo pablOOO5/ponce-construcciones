@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="500" viewBox="0 0 420 500" role="img" aria-label="Ponce Pablo Logo Stacked">
+  <title>Ponce Pablo</title>
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#ffa726"/>
+    </linearGradient>
+    <clipPath id="clip-spark2">
+      <circle cx="210" cy="180" r="100"/>
+    </clipPath>
+  </defs>
+  <circle cx="210" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="20" stroke-linecap="round" stroke-dasharray="680 80"/>
+  <g clip-path="url(#clip-spark2)">
+    <path d="M180 250l24-72 30 16 16-56-40-30-46 26-18 60z" fill="#111" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M214 162l18 14 8-26-20-16z" fill="#222" stroke="#000" stroke-width="2"/>
+    <path d="M224 148l36 22-14 46-40-24z" fill="#2d2d2d" stroke="#000" stroke-width="3"/>
+    <rect x="232" y="164" width="18" height="12" rx="2" fill="#000" stroke="#888" stroke-width="1"/>
+    <g stroke="#ffa726" stroke-width="3" stroke-linecap="round">
+      <line x1="190" y1="252" x2="212" y2="246"/>
+      <line x1="190" y1="252" x2="208" y2="262"/>
+      <line x1="190" y1="252" x2="202" y2="236"/>
+    </g>
+  </g>
+  <g font-family="'Merriweather', Georgia, serif" fill="#fff" text-anchor="middle">
+    <text x="210" y="360" font-size="70" font-weight="700" letter-spacing="3">PONCE</text>
+    <text x="210" y="420" font-size="70" font-weight="400" letter-spacing="3">PABLO</text>
+    <text x="210" y="462" font-size="26" fill="url(#g1)" font-weight="600" letter-spacing="2">SOLDADURAS &amp; MONTAJE</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Isotipo Ponce Pablo">
+  <title>Isotipo Ponce Pablo</title>
+  <defs>
+    <linearGradient id="orangeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#ffa726"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Círculo naranja más definido para favicon -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#orangeGrad2)" stroke-width="16" 
+          stroke-linecap="round" stroke-dasharray="450 50" opacity="0.95"/>
+  
+  <!-- Soldador centrado y simplificado -->
+  <g transform="translate(100,100)">
+    <!-- Cuerpo principal -->
+    <path d="M-30 20 L-20 -25 L15 -15 L20 -40 L-15 -50 L-40 -30 L-35 15 Z" 
+          fill="#1a1a1a" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+    
+    <!-- Máscara más visible -->
+    <rect x="-10" y="-40" width="25" height="18" rx="4" fill="#2d2d2d" stroke="#000" stroke-width="1.5"/>
+    <rect x="-6" y="-35" width="10" height="8" rx="2" fill="#000"/>
+    
+    <!-- Chispas más prominentes -->
+    <g stroke="#ffa726" stroke-width="3" stroke-linecap="round">
+      <line x1="-25" y1="22" x2="-15" y2="18"/>
+      <line x1="-25" y1="22" x2="-18" y2="30"/>
+      <line x1="-25" y1="22" x2="-30" y2="12"/>
+    </g>
+  </g>
+</svg>
