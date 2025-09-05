@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://poncepablo.com.ar/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Block access to admin areas (if any in the future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all images to be crawled
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow all important paths
+Allow: /images/
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js

@@ -124,6 +124,137 @@ const services = [
   </div>
 </section>
 
+<!-- Services Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList", 
+  "itemListElement": [
+    {
+      "@type": "Service",
+      "@id": "https://poncepablo.com.ar/#soldaduras-especiales",
+      "name": "Soldaduras Especiales",
+      "description": "Servicios especializados en soldaduras para aplicaciones industriales críticas con certificaciones API y ASME IX.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ponce Pablo",
+        "@id": "https://poncepablo.com.ar/#business"
+      },
+      "serviceType": "Soldaduras Industriales",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Santa Fe"
+        },
+        {
+          "@type": "State", 
+          "name": "Buenos Aires"
+        },
+        {
+          "@type": "State",
+          "name": "Córdoba"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Soldaduras Especiales",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soldaduras en tendidos de gasoductos - API"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soldaduras en plantas de regulación y medición - ASME IX"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poncepablo.com.ar/#obras-civiles",
+      "name": "Obras Civiles",
+      "description": "Construcción integral y modificación de obras existentes con materiales de primera calidad y mano de obra especializada.",
+      "provider": {
+        "@type": "LocalBusiness", 
+        "name": "Ponce Pablo",
+        "@id": "https://poncepablo.com.ar/#business"
+      },
+      "serviceType": "Construcción Civil",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Obras Civiles",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Construcción en general y modificación de obras existentes"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Estructuras de hormigón armado, urbanización y edificación"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Carpintería, herrería industrial, vallados, postes de alumbrado"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poncepablo.com.ar/#instalacion-sanitaria",
+      "name": "Instalación Sanitaria",
+      "description": "Soluciones completas en instalaciones sanitarias y de gas natural con provisión de materiales aprobados y equipos especializados.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ponce Pablo", 
+        "@id": "https://poncepablo.com.ar/#business"
+      },
+      "serviceType": "Instalaciones Sanitarias"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poncepablo.com.ar/#instalaciones-industriales", 
+      "name": "Instalaciones Industriales",
+      "description": "Montaje y mantenimiento de equipos industriales especializados incluyendo sistemas contra incendios y equipamiento pesado.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ponce Pablo",
+        "@id": "https://poncepablo.com.ar/#business"
+      },
+      "serviceType": "Instalaciones Industriales"
+    },
+    {
+      "@type": "Service", 
+      "@id": "https://poncepablo.com.ar/#cableado-subterraneo",
+      "name": "Ejecución y Tendido de Cableado Subterráneo",
+      "description": "Servicios especializados en tendido de cableado subterráneo con equipos de última generación y técnicas avanzadas.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ponce Pablo",
+        "@id": "https://poncepablo.com.ar/#business"
+      },
+      "serviceType": "Instalaciones Eléctricas Subterráneas"
+    }
+  ]
+}
+</script>
+
 <!-- Modal para galería de imágenes -->
 <div id="imageModal" class="modal" data-base={basePath}>
   <div class="modal-content">

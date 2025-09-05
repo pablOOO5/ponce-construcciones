@@ -1,0 +1,267 @@
+---
+// Componente FAQ con Schema.org
+const faqs = [
+  {
+    question: "¿En qué provincias de Argentina trabajan?",
+    answer: "Brindamos servicios en Santa Fe, Buenos Aires, Córdoba, Entre Ríos, Mendoza y Chaco. Tenemos más de 15 años de experiencia trabajando en estas provincias."
+  },
+  {
+    question: "¿Qué tipo de soldaduras especiales realizan?",
+    answer: "Realizamos soldaduras en tendidos de gasoductos con certificación API y soldaduras en plantas de regulación y medición con certificación ASME IX. También trabajamos con acero inoxidable para aplicaciones industriales."
+  },
+  {
+    question: "¿Ofrecen servicios de mantenimiento industrial?",
+    answer: "Sí, ofrecemos servicios completos de mantenimiento industrial incluyendo reparación de calderas, cambio de tubulares, limpieza interior, restauración y todo tipo de mantenimiento preventivo."
+  },
+  {
+    question: "¿Cuántos años de experiencia tienen en construcción industrial?",
+    answer: "Contamos con más de 15 años de experiencia en el rubro de construcción industrial, habiendo completado más de 100 proyectos en 6 provincias de Argentina."
+  },
+  {
+    question: "¿Realizan instalaciones contra incendios?",
+    answer: "Sí, realizamos instalaciones contra incendios completas incluyendo cañerías soldadas, conexionado a bombas, rociadores, hidrantes y montantes. Trabajamos con cañerías de diversas medidas según las necesidades del proyecto."
+  },
+  {
+    question: "¿Cómo puedo solicitar un presupuesto?",
+    answer: "Puede contactarnos por WhatsApp al 342 5546807, por teléfono al 342 5573707, por email a ponceysimioni@hotmail.com o visitarnos en Caferata 1437, Recreo, Santa Fe."
+  }
+];
+---
+
+<section id="preguntas-frecuentes" class="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Preguntas Frecuentes</h2>
+      <p>Respuestas a las consultas más comunes sobre nuestros servicios de construcción industrial</p>
+    </div>
+    
+    <div class="faq-grid">
+      {faqs.map((faq, index) => (
+        <div class="faq-item" data-aos="fade-up" data-aos-delay={index * 100}>
+          <div class="faq-question">
+            <h3>{faq.question}</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿En qué provincias de Argentina trabajan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brindamos servicios en Santa Fe, Buenos Aires, Córdoba, Entre Ríos, Mendoza y Chaco. Tenemos más de 15 años de experiencia trabajando en estas provincias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipo de soldaduras especiales realizan?", 
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Realizamos soldaduras en tendidos de gasoductos con certificación API y soldaduras en plantas de regulación y medición con certificación ASME IX. También trabajamos con acero inoxidable para aplicaciones industriales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen servicios de mantenimiento industrial?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Sí, ofrecemos servicios completos de mantenimiento industrial incluyendo reparación de calderas, cambio de tubulares, limpieza interior, restauración y todo tipo de mantenimiento preventivo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos años de experiencia tienen en construcción industrial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contamos con más de 15 años de experiencia en el rubro de construcción industrial, habiendo completado más de 100 proyectos en 6 provincias de Argentina."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "¿Realizan instalaciones contra incendios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, realizamos instalaciones contra incendios completas incluyendo cañerías soldadas, conexionado a bombas, rociadores, hidrantes y montantes. Trabajamos con cañerías de diversas medidas según las necesidades del proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo solicitar un presupuesto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puede contactarnos por WhatsApp al 342 5546807, por teléfono al 342 5573707, por email a ponceysimioni@hotmail.com o visitarnos en Caferata 1437, Recreo, Santa Fe."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  .faq {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #1a1a2e 100%);
+    position: relative;
+  }
+
+  .faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+    color: #ff6b35;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+  }
+
+  .section-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .faq-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.2);
+  }
+
+  .faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+  }
+
+  .faq-question h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .faq-icon {
+    color: #ff6b35;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1.5rem;
+  }
+
+  .faq-answer p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .faq-question {
+      padding: 1rem;
+    }
+    
+    .faq-question h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', function() {
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>

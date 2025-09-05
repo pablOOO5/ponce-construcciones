@@ -12,7 +12,12 @@ const { title, description = "Ponce Pablo - Servicios de construcción industria
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="construcción industrial Santa Fe, soldaduras especiales, obras civiles, instalaciones sanitarias, mantenimiento industrial, calderas, ASME IX, API, Santa Fe Argentina" />
+		<meta name="author" content="Ponce Pablo" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<link rel="canonical" href="https://poncepablo.com.ar/" />
 		{(() => {
 			const base = import.meta.env.BASE_URL || '/';
 			const normalized = base.endsWith('/') ? base : base + '/';
@@ -22,13 +27,147 @@ const { title, description = "Ponce Pablo - Servicios de construcción industria
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://poncepablo.com.ar/" />
+		<meta property="og:site_name" content="Ponce Pablo Construcciones" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://poncepablo.com.ar/images/about-ponce.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Ponce Pablo - Equipo de construcción industrial especializada" />
+		<meta property="og:locale" content="es_AR" />
 		
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://poncepablo.com.ar/" />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://poncepablo.com.ar/images/about-ponce.jpg" />
+		<meta property="twitter:image:alt" content="Ponce Pablo - Construcción industrial Santa Fe" />
+		
+		<!-- Schema.org LocalBusiness JSON-LD -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": "https://poncepablo.com.ar/#business",
+			"name": "Ponce Pablo",
+			"alternateName": "Ponce Pablo Construcciones",
+			"description": "Empresa especializada en servicios de construcción industrial con más de 15 años de experiencia en Santa Fe y provincias de Argentina.",
+			"url": "https://poncepablo.com.ar",
+			"logo": "https://poncepablo.com.ar/images/logo/logo-primary.svg",
+			"image": "https://poncepablo.com.ar/images/about-ponce.jpg",
+			"telephone": "+54-342-5573707",
+			"additionalProperty": [
+				{
+					"@type": "PropertyValue",
+					"name": "Teléfono Adicional",
+					"value": "+54-342-5546807"
+				}
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Caferata 1437",
+				"addressLocality": "Recreo", 
+				"addressRegion": "Santa Fe",
+				"postalCode": "3018",
+				"addressCountry": "AR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": "-31.4974",
+				"longitude": "-60.7412"
+			},
+			"areaServed": [
+				{
+					"@type": "State",
+					"name": "Santa Fe"
+				},
+				{
+					"@type": "State", 
+					"name": "Buenos Aires"
+				},
+				{
+					"@type": "State",
+					"name": "Córdoba"
+				},
+				{
+					"@type": "State",
+					"name": "Entre Ríos"
+				},
+				{
+					"@type": "State",
+					"name": "Mendoza"
+				},
+				{
+					"@type": "State",
+					"name": "Chaco"
+				}
+			],
+			"foundingDate": "2008",
+			"hasOfferCatalog": {
+				"@type": "OfferCatalog",
+				"name": "Servicios de Construcción Industrial",
+				"itemListElement": [
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Soldaduras Especiales",
+							"description": "Servicios especializados en soldaduras para aplicaciones industriales críticas con certificaciones API y ASME IX"
+						}
+					},
+					{
+						"@type": "Offer", 
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Obras Civiles",
+							"description": "Construcción integral y modificación de obras existentes con materiales de primera calidad"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service", 
+							"name": "Instalación Sanitaria",
+							"description": "Soluciones completas en instalaciones sanitarias y de gas natural"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Instalaciones Industriales", 
+							"description": "Montaje y mantenimiento de equipos industriales especializados"
+						}
+					},
+					{
+						"@type": "Offer",
+						"itemOffered": {
+							"@type": "Service",
+							"name": "Mantenimiento Industrial",
+							"description": "Reparación y mantenimiento preventivo de calderas y equipos industriales"
+						}
+					}
+				]
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+54-342-5573707",
+				"contactType": "customer service",
+				"availableLanguage": "Spanish",
+				"areaServed": "AR"
+			},
+			"sameAs": [
+				"https://instagram.com/poncepablo.instalaciones",
+				"https://facebook.com/ponceysimioni"
+			],
+			"priceRange": "$$",
+			"paymentAccepted": "Cash, Check, Credit Card, Invoice",
+			"currenciesAccepted": "ARS",
+			"keywords": "construcción industrial, soldaduras especiales, obras civiles, instalaciones sanitarias, mantenimiento industrial, calderas, Santa Fe, Argentina"
+		}
+		</script>
 		
 		<title>{title}</title>
 	</head>
